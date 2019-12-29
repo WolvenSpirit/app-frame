@@ -1,27 +1,11 @@
-# SkeletonApp
+# app-frame
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+---
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This is meant to be included as a npm module, this repository contains the source of said module.
+- Purpouse:
+    - Responsive out of the box.
+    - Meant to provide a faster development time for "simple" apps that do not require stylish extremelly custom navbars etc.
+    - It aims to provide customizable navbar with links, logo, menu dropdown, color theme, same goes for sidebar.
+    - To export labels and support/ provide a mechanism for switching language either from nav or sidebar.
+    - Still give you control of its routing, it looks for constant `subRoutes1` of type `:Route[]` in your default routes file and would bootstrap your own app components if you register them there. Your routes would need a path pointing to the feature's MainComponent from your own app router with `children:subRoutes1`, and you're good to go.
