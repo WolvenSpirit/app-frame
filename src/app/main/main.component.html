@@ -1,0 +1,15 @@
+<app-toolbar #toolbar></app-toolbar>
+<mat-sidenav-container [ngStyle]="{'height':cfg.viewport_height?cfg.viewport_height:'80vh'}" [autosize]="cfg.sidebar_config.autosize">
+    <mat-sidenav #drawer [mode]="cfg.sidebar_config.mode" class="" [ngStyle]="{'width':cfg.drawer_width?cfg.drawer_width:'15vh'}">
+        <br><br><br><br>
+
+        <div [innerHTML]="cfg.sidebar_logo" class="container p-1 text-center">
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <br><br><br><br>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

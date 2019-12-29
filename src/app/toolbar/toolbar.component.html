@@ -1,0 +1,14 @@
+<mat-toolbar [color]="cfg.toolbar_color" style="display:flex;" class="fixed-top animated slideInDown">
+    <mat-slide-toggle #sidebarToggle></mat-slide-toggle>
+    <span style="flex: 1 1 auto;" [innerHTML]="cfg.navbar_left"></span>
+    <a [innerHTML]="cfg.navbar_logo"></a>
+    <span style="flex: 1 1 auto;" [innerHTML]="cfg.navbar_right"></span>
+    <button mat-icon-button [matMenuTriggerFor]="navMenu">
+        <i class="material-icons">menu</i>
+    </button>
+    <mat-menu #navMenu>
+        <a mat-menu-item *ngIf="!cfg.menuButtons&&!cfg.menuLinks">Menu currently has no items.</a>
+        <button mat-menu-item *ngFor="let btn of cfg.menuButtons" (click)="btn.clickfn()">{{btn.label}}</button>
+        <a mat-menu-item *ngFor="let link of cfg.menuLinks" routerLink="link.path">{{link.label}}</a>
+    </mat-menu>
+</mat-toolbar>
