@@ -4,11 +4,18 @@ import { SafeHtml } from '@angular/platform-browser';
 export interface MENU_BUTTONS{
   label:string
   clickfn:any
+  tooltip?:string
 }
 // This is meant to work with normal links and not ones with relative pathing, query params etc. at least for now.
 export interface MENU_LINKS{
   label:string
   path:string
+  tooltip?:string
+}
+
+export interface TOOLTIPS{
+  navbar_menu_button:string
+  sidebar_toggle:string
 }
 
 @Injectable({
@@ -36,6 +43,6 @@ export class ConfigService {
   public viewport_height:string = '100vh';
   public drawer_width:string = '30vh';
   public toolbar_color:string = "primary";
-
+  public tooltips:TOOLTIPS;
   constructor() { }
 }

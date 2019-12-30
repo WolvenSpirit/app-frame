@@ -1,5 +1,4 @@
 import { Component, ViewChild, AfterContentInit } from '@angular/core';
-import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ConfigService } from './main/config.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -11,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent {
   title = 'app-frame';
   constructor(private config:ConfigService, sanitizer:DomSanitizer) {
-    config.toolbar_color = 'accent';
+    config.toolbar_color = 'primary';
     config.navbar_logo = sanitizer.bypassSecurityTrustHtml('<b>Market</b><small>place</small>')
     config.menuButtons = [{clickfn:()=>{alert('clicked!')},label:'demo'}]
   }

@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { DemoComponent } from './demo/demo.component';
 
-export const subRoutes1: Routes = [
-  {path:"demo",component:DemoComponent}
+const childRoutes:Routes = [
+  {path:"admin",component:DemoComponent}
 ]
 const routes: Routes = [
-  {path:"admin",component:MainComponent,children:subRoutes1} // Info - place guard if you need it!
+  {path:"",component:MainComponent,children:childRoutes} // Info - place guard if you need it!
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -10,7 +10,7 @@ import { ConfigService } from './config.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, AfterContentInit {
   
   private u$:Subject<any> = new Subject();
   constructor(public cfg:ConfigService) { }
@@ -22,11 +22,10 @@ export class MainComponent implements OnInit {
 
 
   ngAfterContentInit():void {
-    console.log(this.toolbar);
-    this.sidenav.toggle(); // start with sidebar showing
     this.toolbar.sidebarToggle.change.pipe(takeUntil(this.u$)).subscribe(()=>{
       this.sidenav.toggle();
     });
+   setTimeout(()=>{this.sidenav.toggle();this.toolbar.sidebarToggle.toggle()},1500)
   }
 
 }

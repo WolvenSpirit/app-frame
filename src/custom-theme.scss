@@ -10,7 +10,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $skeleton-app-primary: mat-palette($mat-indigo, A100);
-$skeleton-app-accent: mat-palette($mat-grey, A200, A100, A400);
+$skeleton-app-accent: mat-palette($mat-grey, A900, A100, A900);
 // The warn palette is optional (defaults to red).
 $skeleton-app-warn: mat-palette($mat-orange);
 // Create the theme object (a Sass map containing all of the palettes).

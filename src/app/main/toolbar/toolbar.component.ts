@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
-import { ConfigService } from '../main/config.service';
+import { ConfigService } from '../config.service';
 
 
 
@@ -19,6 +19,7 @@ export class ToolbarComponent implements OnInit, AfterContentInit,AfterContentCh
   ngOnInit() {
   }
   ngAfterContentInit(){
+    console.log(this.sidebarToggle)
   }
   ngAfterContentChecked(){
   }
