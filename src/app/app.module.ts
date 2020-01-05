@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { MainModule } from './main/main.module';
 import { DemoComponent } from './demo/demo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DemoComponent } from './demo/demo.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
     MainModule
   ],
   providers: [],

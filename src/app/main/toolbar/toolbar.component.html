@@ -1,8 +1,21 @@
-<mat-toolbar [color]="cfg.toolbar_color" style="display:flex;" class="fixed-top animated slideInDown">
+<mat-toolbar [color]="cfg.toolbar_color" [ngClass]="cfg.toolbar_class" style="display:flex;" class="fixed-top animated slideInDown">
     <mat-slide-toggle #sidebarToggle></mat-slide-toggle>
-    <span style="flex: 1 1 auto;" [innerHTML]="cfg.navbar_left"></span>
+    <span class=" text-center" style="flex: auto;">
+        <span>
+        <a *ngFor="let item of cfg.navbar_left">
+            <button [color]="item.color" [matTooltip]="item.tooltip"  mat-raised-button ngClass="{{item.class}}" [matBadge]="item.matBadge" [matBadgePosition]="item.matBadgePosition||'above'" [matBadgeColor]="item.matBadgeColor" [matBadgeSize]="item.matBadgeSize||'medium'" (click)="item.clickfn()">{{item.label}}</button>
+        </a>
+        </span>
+    </span>
     <a [innerHTML]="cfg.navbar_logo"></a>
-    <span style="flex: 1 1 auto;" [innerHTML]="cfg.navbar_right"></span>
+    <span class=" text-center" style="flex: auto;">
+        <span>
+        <a *ngFor="let item of cfg.navbar_right">
+            <button [color]="item.color" [matTooltip]="item.tooltip"  mat-raised-button ngClass="{{item.class}}" [matBadge]="item.matBadge" [matBadgePosition]="item.matBadgePosition||'above'" [matBadgeColor]="item.matBadgeColor" [matBadgeSize]="item.matBadgeSize||'medium'" (click)="item.clickfn()">{{item.label}}</button>
+        </a>
+        </span>
+    </span>
+
     <button mat-icon-button [matMenuTriggerFor]="navMenu">
         <i class="material-icons">menu</i>
     </button>
